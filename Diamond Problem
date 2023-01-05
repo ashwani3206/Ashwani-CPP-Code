@@ -1,0 +1,82 @@
+#include<iostream>
+using namespace std;
+class student
+{
+    protected:
+        string name;
+         int rn;
+    protected:
+        void getinfo()
+        {
+            cout<<"ASHWANI KR RAI"<<endl;
+            cout<<"ROLL NO 14"<<endl;
+            cout<<"Enter name"<<endl;
+            getline(cin,name);
+            cout<<"Enter roll number"<<endl;
+            cin>>rn;
+        }
+        void showinfo()
+        {
+            cout<<"Name of the student="<<name<<endl;
+            cout<<"Roll no. of student="<<rn<<endl;
+        }
+};
+class sports : virtual public student
+{
+    protected:
+        float sp1,sp2,sp3;
+    protected:
+        void getsports()
+        {
+            cout<<"Enter sports marks"<<endl;
+            cin>>sp1>>sp2>>sp3;
+        }
+        void showsports()
+        {
+            cout<<"Sports marks="<<sp1<<sp2<<sp3<<endl;
+        }
+};
+class academic : virtual public student
+{
+    protected:
+        float m1,m2,m3,m4,m5;
+    protected:
+        void getaca()
+        {
+            cout<<"Enter academic marks"<<endl;
+            cin>>m1>>m2>>m3>>m4>>m5;
+        }
+        void showaca()
+        {
+            cout<<"Academic marks="<<m1<<m2<<m3<<m4<<m5<<endl;
+        }
+};
+class result : protected sports , protected academic
+{
+    private:
+        float total_marks;
+    public:
+        void total()
+        {
+            getinfo();
+            float s1=0,s2=0;
+            getsports();
+            s1=sp1+sp2+sp3;
+            getaca();
+            s2=m1+m2+m3+m4+m5;
+            total_marks=s1+s2;
+        }
+        void display()
+        {
+            showinfo();
+            cout<<"Total marks="<<total_marks<<endl;
+        }
+};
+int main()
+{
+    result ob;
+    ob.total();
+    ob.display();
+    return 0;
+}
+
