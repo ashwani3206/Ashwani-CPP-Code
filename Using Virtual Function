@@ -1,0 +1,56 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+class temperature
+{
+    protected:
+        float temp;
+    public:
+        void settempdata(float t)
+        {
+            temp=t;
+        }
+        virtual void changetemp()=0;
+};
+class fahrenheit : public temperature
+{
+    public:
+        float ctemp;
+    public:
+        void settempdata(float t)
+        {
+            temp=t;
+        }
+        void changetemp()
+        {
+            ctemp=(0.55)*(temp-32);
+            cout<<"Temperature in celsius="<<ctemp<<endl;
+        }
+};
+class celsius : public temperature
+{
+    public:
+        float ftemp;
+    public:
+        void settempdata(float t)
+        {
+            temp=t;
+        }
+        void changetemp()
+        {
+            ftemp=(1.8)*(temp+32);
+            cout<<"Temperature in fahrenheit="<<ftemp<<endl;
+        }
+};
+int main()
+{
+    cout<<"ASHWANI KR RAI"<<endl;
+    cout<<"ROLL NO 14"<<endl;
+    fahrenheit ob1;
+    ob1.settempdata(98.5);
+    ob1.changetemp();
+    celsius ob2;
+    ob1.settempdata(98.5);
+    ob2.changetemp();
+    return 0;
+}
