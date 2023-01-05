@@ -1,0 +1,76 @@
+#include<iostream>
+using namespace std;
+class test
+{
+private:
+        int a;
+    public:
+        test()
+        {
+
+        }
+        test(int x)
+        {
+            a=x;
+        }
+        void show()
+        {
+            cout<<a<<endl;
+        }
+        friend test operator - (test &);
+        friend test operator ++ (test &);
+        friend test operator ++ (test &, int);
+        friend test operator -- (test &);
+        friend test operator -- (test &, int);
+};
+test operator -(test & ob)
+{
+    test temp;
+    temp.a=-ob.a;
+    return temp;
+}
+test operator ++ (test &ob)
+{
+    test temp;
+    temp.a=++ob.a;
+    return temp;
+}
+test operator ++ (test &ob,int)
+{
+    test temp;
+    temp.a=ob.a++;
+    return temp;
+}
+test operator -- (test &ob)
+{
+    test temp;
+    temp.a=--ob.a;
+    return temp;
+}
+test operator -- (test &ob,int)
+{
+    test temp;
+    temp.a=ob.a--;
+    return temp;
+}
+
+
+int main()
+{
+    cout<<”ASHWANI KR RAI”<<endl;
+    cout<<”ROLL NO 14”<<endl;
+    test c1(10),c2;
+    c2=operator -(c1);
+    c2.show();
+     c2=operator ++(c1,0);
+    c2.show();
+    c2=operator ++(c1);
+    c2.show();
+    c2=operator --(c1,0);
+    c2.show();
+    c2=operator --(c1);
+    c2.show();
+
+}
+
+
