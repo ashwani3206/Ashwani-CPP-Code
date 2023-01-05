@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+void specialnumber(int n)
+{   
+    cout<<"ASHWANI KR RAI"<<endl;
+    cout<<"ROLL NO 14"<<endl;
+    int first , last , product , sum , num;
+    cout<<"Enter the two digit number";
+    cin>>num;
+    if(num<10 && num>99)
+    {
+        cout<<"Enter a valid two digit number"<<endl;
+    }
+    else
+    {
+        first = num/10;
+        last = num%10;
+        product= first*last;
+        sum= first+last;
+        
+        if(sum+product == num)
+        {
+            cout<<"It is a speacial two digit number";
+        }
+        else
+        {
+            cout<<"It is a not a special two digit number";
+        }
+    }
+}
+
+int main()
+{
+    int num;
+    specialnumber(num);
+    return 0;
+}
+
+
+
+
+
