@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+
+int main() 
+    {
+    cout<<"ASHWANI KR RAI"<<endl;
+    cout<<"ROLL NO 14"<<endl;
+    int x, y, z;
+    float r;
+    cout << "Enter the value of x:";
+    cin>>x;
+    cout << "Enter the value of y:";
+    cin>>y;
+    cout << "Enter the value of z:";
+    cin>>z;
+
+    try {
+        if ((x - y) != 0) {
+            r = z / (x - y);
+            cout << "Result is:" << r;
+        } else {
+            throw (x - y);
+        }
+    } catch (int i) {
+        cout << "Answer is infinite because x-y is:" << i;
+    }
+
+}
