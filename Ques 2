@@ -1,0 +1,26 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+struct Student {
+  std::string name;
+  int attendance;
+};
+
+int main() {
+  std::ifstream input_file("std.lst");
+  std::ofstream output_file1("std1.lst");
+  std::ofstream output_file2("std2.lst");
+
+  std::string name;
+  int attendance;
+  while (input_file >> name >> attendance) {
+    output_file1 << name << " " << attendance << std::endl;
+    output_file2 << name << " " << attendance << std::endl;
+  }
+
+  input_file.close();
+  output_file1.close();
+  output_file2.close();
+  return 0;
+}
